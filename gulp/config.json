@@ -1,13 +1,13 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./public"
+    "dest": "./dist"
   },
 
   "tasks": {
     "browserSync": {
       "server": {
-        "baseDir": "public"
+        "baseDir": "dist"
       }
     },
 
@@ -17,8 +17,8 @@
     },
 
     "js": {
-      "src": "scripts",
-      "dest": "scripts",
+      "src": "js",
+      "dest": "js",
       "entries": {
         "app": ["./app.js"]
       },
@@ -30,8 +30,8 @@
       "extractSharedJs": false
     },
     "css": {
-      "src": "styles",
-      "dest": "styles",
+      "src": "css",
+      "dest": "css",
       "autoprefixer": {
         "browsers": ["last 3 version"]
       },
