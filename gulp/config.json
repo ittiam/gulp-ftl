@@ -1,7 +1,7 @@
 {
   "root": {
     "src": "./src",
-    "dest": "./dist",
+    "dest": "./dest",
     "tmp": "./.tmp"
   },
 
@@ -53,8 +53,8 @@
     },
 
     "rev": {
-      "src": ".tmp",
-      "dest": ".tmp",
+      "src": "dest",
+      "dest": "dest",
       "prefix": "http://static.wdzj.com/wdzj",
       "dontRenameFile": [".html", ".php", ".ftl"]
     },

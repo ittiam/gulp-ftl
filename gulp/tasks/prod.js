@@ -9,5 +9,5 @@ const productionTask = function(cb) {
   gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, config.tasks.production.rev ? 'rev': false, 'static', cb);
 };
 
-gulp.task('production', productionTask);
+gulp.task('prod', productionTask);
 module.exports = productionTask;

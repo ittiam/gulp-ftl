@@ -9,12 +9,12 @@ const revDel = require('gulp-rev-delete-original');
 
 const paths = {
   src: path.join(config.tasks.rev.src, '/**/*'),
-  dest: path.join(config.root.dest, config.tasks.rev.dest)
+  dest: path.join(config.root.dest)
 };
 
 const revTask = function() {
   const revAll = new RevAll({
-    debug: false,
+    debug: true,
     prefix: config.tasks.rev.prefix,
     fileNameManifest: 'manifest.json',
     dontRenameFile: config.tasks.rev.dontRenameFile
@@ -22,12 +22,12 @@ const revTask = function() {
 
   return gulp.src(paths.src)
     .pipe(revAll.revision())
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.dest))
     .pipe(revDel({
       exclude: /(.html|.htm)$/
     }))
     .pipe(revAll.manifestFile())
-    .pipe(gulp.dest(paths.dist));
+    .pipe(gulp.dest(paths.dest));
 }
 
 gulp.task('rev', revTask);
