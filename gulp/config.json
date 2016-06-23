@@ -2,7 +2,8 @@
   "root": {
     "src": "./src",
     "dest": "./dest",
-    "tmp": "./.tmp"
+    "tmp": "./.tmp",
+    "mock": "./mock"
   },
 
   "tasks": {

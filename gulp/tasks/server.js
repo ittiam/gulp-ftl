@@ -9,6 +9,8 @@ const open = require('open');
 const path = require('path');
 const getEnabledTasks = require('../lib/getEnabledTasks');
 
+const projectRoot = path.resolve(__dirname, '../../');
+
 const dest = global.production ? config.root.dest : config.root.tmp;
 
 const settings = {
@@ -31,6 +33,11 @@ const serverTask = function(cb) {
     .use(compress())
     .use(logger(settings.logLevel))
     .use('/', express.static(settings.root, settings.staticOptions))
+    .use(require('yog-devtools')({
+      view_path: '',    // 避免报错。
+      rewrite_file: [path.join(projectRoot, config.root.mock, 'server.conf')],
+      data_path: [path.join(projectRoot, config.root.mock)]
+    }))
     .listen(settings.port);
 
   gutil.log('production server started on ' + gutil.colors.green(url));
