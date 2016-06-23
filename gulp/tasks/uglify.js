@@ -13,7 +13,7 @@ const paths = {
 var uglifyTask = function() {
   return gulp.src(paths.src)
     .pipe(uglify())
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.dest))
     .pipe(size());
 }
 

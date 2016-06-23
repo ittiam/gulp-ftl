@@ -20,10 +20,9 @@ var cssTask = function () {
     // .pipe(sass(config.tasks.css.sass))
     // .on('error', handleErrors)
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
-    .pipe(gulpif(global.production, cssnano({autoprefixer: false})))
-    .pipe(gulpif(!global.production, sourcemaps.write()))
+    .pipe(gulpif(global.production, minifyCSS({autoprefixer: false})))
+    .pipe(gulpif(!global.production, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
 }
 
 gulp.task('css', cssTask)
