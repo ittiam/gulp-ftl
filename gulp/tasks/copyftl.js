@@ -4,15 +4,15 @@ const gulp    = require('gulp');
 const path    = require('path');
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
-  dest: path.join(config.root.tmp, config.tasks.js.dest)
+  src: path.join(config.root.src, config.tasks.ftl.viewRoot, '/**/*'),
+  dest: path.join(config.root.dest, config.tasks.ftl.dest)
 };
 
-const scriptTask = function() {
+const copyFtlTask = function() {
   return gulp.src(paths.src)
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulp.dest(paths.dest));
 };
 
-gulp.task('scripts', scriptTask);
-module.exports = scriptTask;
+gulp.task('copyftl', copyFtlTask);
+module.exports = copyFtlTask;

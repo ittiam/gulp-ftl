@@ -24,7 +24,7 @@ const settings = {
 };
 
 const serverTask = function(cb) {
-  const url = 'http://localhost:' + settings.port;
+  const url = 'http://localhost:' + settings.port + '/' + config.tasks.ftl.dest;
 
   const tasks = getEnabledTasks('dev');
   gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb);

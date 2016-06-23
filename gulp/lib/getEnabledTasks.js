@@ -8,8 +8,11 @@ const codeTasks = ['ftl', 'css', 'js'];
 module.exports = function(env) {
 
   function matchFilter(task) {
-    if(config.tasks[task]) {
-      if(task === 'js') {
+    if (config.tasks[task]) {
+      if (task === 'ftl' && env === 'production') {
+        task = 'copyftl';
+      }
+      if (task === 'js') {
         task = env === 'production' ? 'uglify' : 'scripts';
       }
       return task;

@@ -6,7 +6,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
     <title>Gulp Mock Server</title>
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <#escape x as x?html>
