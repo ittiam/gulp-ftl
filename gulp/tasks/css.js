@@ -9,9 +9,11 @@ const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const minifyCSS = require('gulp-cssnano');
 
+const dest = global.production ? config.root.dest : config.root.tmp;
+
 const paths = {
   src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
-  dest: path.join(config.root.dest, config.tasks.css.dest)
+  dest: path.join(dest, config.tasks.css.dest)
 };
 
 var cssTask = function () {

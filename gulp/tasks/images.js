@@ -1,7 +1,15 @@
 const changed    = require('gulp-changed');
 const gulp       = require('gulp');
 const imagemin   = require('gulp-imagemin');
-const config     = require('../config').images;
+const config     = require('../config');
+const path = require('path');
+
+const dest = global.production ? config.root.dest : config.root.tmp;
+
+const paths = {
+  src: path.join(process.cwd(), config.tasks.images.src, '/**/*.{' + config.tasks.images.extensions + '}'),
+  dest: path.join(process.cwd(), dest, config.tasks.images.dest)
+};
 
 const imagesTask = function () {
   return gulp.src(config.src)

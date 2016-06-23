@@ -2,7 +2,7 @@ const config  = require('../config');
 const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
-const assetTasks = ['fonts', 'iconFont', 'images', 'svgSprite'];
+const assetTasks = ['fonts'];
 const codeTasks = ['ftl', 'css', 'js'];
 
 module.exports = function(env) {
@@ -10,7 +10,7 @@ module.exports = function(env) {
   function matchFilter(task) {
     if(config.tasks[task]) {
       if(task === 'js') {
-        task = env === 'production' ? 'uglify' : false;
+        task = env === 'production' ? 'uglify' : 'scripts';
       }
       return task;
     }
