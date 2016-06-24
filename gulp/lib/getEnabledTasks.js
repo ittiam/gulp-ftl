@@ -3,7 +3,7 @@ const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
 const assetTasks = ['fonts', 'images'];
-const codeTasks = ['ftl', 'css', 'js'];
+const codeTasks = ['ftl', 'css', 'scripts'];
 
 module.exports = function(env) {
 
@@ -12,7 +12,7 @@ module.exports = function(env) {
       if (task === 'ftl' && env === 'production') {
         task = 'copyftl';
       }
-      if (task === 'js') {
+      if (task === 'scripts') {
         task = env === 'production' ? 'uglify' : 'scripts';
       }
       return task;
