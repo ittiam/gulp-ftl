@@ -3,6 +3,7 @@ if (!config.tasks.ftl) return;
 
 const path = require('path');
 const gulp = require('gulp');
+const browserSync  = require('browser-sync');
 const freemarker = require('gulp-freemarker');
 
 var ftlTask = function () {
@@ -19,7 +20,8 @@ var ftlTask = function () {
       viewRoot: paths.viewRoot,
       options: {}
     }))
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(paths.dest))
+    .pipe(browserSync.stream())
 };
 
 gulp.task('ftl', ftlTask);

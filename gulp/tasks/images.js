@@ -5,6 +5,7 @@ const imagemin   = require('gulp-imagemin');
 const config     = require('../config');
 const path = require('path');
 const size    = require('gulp-filesize');
+const browserSync  = require('browser-sync');
 
 const imagesTask = function () {
   const dest = global.production ? config.root.dest : config.root.tmp;
@@ -18,7 +19,8 @@ const imagesTask = function () {
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulpif(global.production, imagemin())) // Optimize
     .pipe(gulp.dest(paths.dest))
-    .pipe(size());
+    .pipe(size())
+    .pipe(browserSync.stream());
 };
 
 gulp.task('images', imagesTask);

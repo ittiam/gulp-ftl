@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.13.0",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "freemarker.js": "github:ittiam/freemarker.js",
@@ -32,8 +33,6 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.8",
     "lodash": "^4.13.1",
-    "morgan": "^1.7.0",
-    "open": "0.0.5",
     "require-dir": "^0.3.0",
     "yog-devtools": "^0.1.0"
   },

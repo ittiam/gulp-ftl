@@ -8,6 +8,7 @@ const sourcemaps   = require('gulp-sourcemaps')
 const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const minifyCSS = require('gulp-cssnano');
+const browserSync  = require('browser-sync');
 
 const cssTask = function () {
   const dest = global.production ? config.root.dest : config.root.tmp;
@@ -25,6 +26,7 @@ const cssTask = function () {
     .pipe(gulpif(global.production, minifyCSS({autoprefixer: false})))
     .pipe(gulpif(!global.production, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.dest))
+    .pipe(browserSync.stream())
 }
 
 gulp.task('css', cssTask)

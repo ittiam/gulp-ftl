@@ -16,7 +16,7 @@
       "dest": "./"
     },
 
-    "js": {
+    "scripts": {
       "src": "js",
       "dest": "js",
       "entries": {

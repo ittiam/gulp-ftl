@@ -11,7 +11,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
     <title>Rapid-Dev-Activity-Page</title>
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <#escape x as x?html>
@@ -22,6 +21,6 @@
 
     <script src="/js/zepto.js"></script>
     <script src="/js/index.js"></script>
-</body> 
+</body>
 </#escape>
 </html>

@@ -6,8 +6,8 @@ const uglify = require('gulp-uglify');
 const path = require('path');
 
 const paths = {
-  src: path.join(config.root.src, config.tasks.js.src, '/**/*.{' + config.tasks.js.extensions + '}'),
-  dest: path.join(config.root.dest, config.tasks.js.dest)
+  src: path.join(config.root.src, config.tasks.scripts.src, '/**/*.{' + config.tasks.scripts.extensions + '}'),
+  dest: path.join(config.root.dest, config.tasks.scripts.dest)
 };
 
 var uglifyTask = function() {
