@@ -24,14 +24,11 @@ const serverTask = function(cb) {
     }
   };
 
-  const url = 'http://localhost:' + settings.port + '/' + config.tasks.ftl.dest;
-
   const tasks = getEnabledTasks('dev');
   gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb);
 
   const app = express()
     .use(compress())
-    // .use(express.static(settings.root, settings.staticOptions))
     .use(require('yog-devtools')({
       view_path: '',    // 避免报错。
       rewrite_file: [path.join(projectRoot, config.root.mock, 'server.conf')],
@@ -39,6 +36,7 @@ const serverTask = function(cb) {
     }))
 
   bs.init({
+    port: config.tasks.server.port || 3000,
     server: settings.root,
     middleware: [app]
   });
