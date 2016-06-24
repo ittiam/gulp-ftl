@@ -19,7 +19,7 @@ const watchTask = function() {
 
   gulp.watch([
     path.join(process.cwd(), config.tasks.ftl.src, '**/*'),
-    path.join(process.cwd(), config.root.src, config.tasks.ftl.viewRoot)], ['ftl']);
+    path.join(process.cwd(), config.root.src, config.tasks.ftl.viewRoot, '**/*.ftl')], ['ftl']);
 };
 
 gulp.task('watch', ['server'], watchTask);
