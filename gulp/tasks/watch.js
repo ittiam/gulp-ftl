@@ -22,5 +22,5 @@ const watchTask = function() {
     path.join(process.cwd(), config.root.src, config.tasks.ftl.viewRoot)], ['ftl']);
 };
 
-gulp.task('watch', watchTask);
+gulp.task('watch', ['server'], watchTask);
 module.exports = watchTask;

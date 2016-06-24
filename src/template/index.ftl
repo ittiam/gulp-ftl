@@ -29,7 +29,7 @@
         <div>
             <button type="button" class="btn">点我点我点我</button>
         </div>
-
+        <img src="/images/qrcode.jpg" alt="">
         <div class="icons">
             <span class="myiconfont myiconfont-add"></span>
             <span class="myiconfont myiconfont-arrow"></span>

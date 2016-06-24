@@ -2,7 +2,7 @@ const config  = require('../config');
 const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
-const assetTasks = ['fonts'];
+const assetTasks = ['fonts', 'images'];
 const codeTasks = ['ftl', 'css', 'js'];
 
 module.exports = function(env) {

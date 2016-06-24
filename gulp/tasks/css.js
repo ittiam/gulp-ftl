@@ -3,13 +3,13 @@ if (!config.tasks.css) return;
 
 const path = require('path');
 const gulp = require('gulp');
-var gulpif = require('gulp-if');
+const gulpif = require('gulp-if');
 const sourcemaps   = require('gulp-sourcemaps')
 const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const minifyCSS = require('gulp-cssnano');
 
-var cssTask = function () {
+const cssTask = function () {
   const dest = global.production ? config.root.dest : config.root.tmp;
 
   const paths = {
