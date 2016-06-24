@@ -13,19 +13,19 @@ const getEnabledTasks = require('../lib/getEnabledTasks');
 
 const projectRoot = path.resolve(__dirname, '../../');
 
-const dest = global.production ? config.root.dest : config.root.tmp;
-
-const settings = {
-  root: path.resolve(process.cwd(), dest),
-  port: process.env.PORT || 5000,
-  logLevel: process.env.NODE_ENV ? 'combined' : 'dev',
-  staticOptions: {
-    extensions: ['html'],
-    maxAge: '31556926'
-  }
-};
-
 const serverTask = function(cb) {
+  const dest = global.production ? config.root.dest : config.root.tmp;
+
+  const settings = {
+    root: path.resolve(process.cwd(), dest),
+    port: process.env.PORT || 5000,
+    logLevel: process.env.NODE_ENV ? 'combined' : 'dev',
+    staticOptions: {
+      extensions: ['html'],
+      maxAge: '31556926'
+    }
+  };
+
   const url = 'http://localhost:' + settings.port + '/' + config.tasks.ftl.dest;
 
   const tasks = getEnabledTasks('dev');
@@ -47,7 +47,7 @@ const serverTask = function(cb) {
 
   app.listen(settings.port);
 
-  gutil.log('production server started on ' + gutil.colors.green(url));
+  gutil.log('server started on ' + gutil.colors.green(url));
   open(url);
 };
 

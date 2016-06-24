@@ -7,10 +7,8 @@
   },
 
   "tasks": {
-    "browserSync": {
-      "server": {
-        "baseDir": "dist"
-      }
+    "server": {
+      "port": 9000
     },
 
     "static": {
@@ -56,7 +54,7 @@
     "rev": {
       "src": "dest",
       "dest": "dest",
-      "prefix": "http://static.wdzj.com/wdzj",
+      "prefix": "",
       "dontRenameFile": [".html", ".php", ".ftl"]
     },
 
@@ -97,7 +95,8 @@
     },
 
     "production": {
-      "rev": true
+      "rev": true,
+      "server": false
     }
   }
 }
