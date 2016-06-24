@@ -1,5 +1,3 @@
 .tmp
 node_modules
 dest
-!node_modules/freemarker.js
-!node_modules/gulp-rev-all
