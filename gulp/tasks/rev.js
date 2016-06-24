@@ -13,8 +13,10 @@ const paths = {
 };
 
 const revTask = function() {
+
   const revAll = new RevAll({
-    debug: true,
+    debug: false,
+    dontGlobal: [/^\/favicon.ico$/, 'manifest.json'],
     prefix: config.tasks.rev.prefix,
     fileNameManifest: 'manifest.json',
     dontRenameFile: config.tasks.rev.dontRenameFile

@@ -1,7 +1,7 @@
 @font-face {
 	font-family:"myicon";
-	src:url("../fonts/myicon.eot");
-	src:url("../fonts/myicon.eot?#iefix") format("eot"),url("../fonts/myicon.woff2") format("woff2"),url("../fonts/myicon.woff") format("woff"),url("../fonts/myicon.ttf") format("truetype"),url("../fonts/myicon.svg#myicon") format("svg");
+	src:url("/fonts/myicon.eot");
+	src:url("/fonts/myicon.eot?#iefix") format("eot"),url("/fonts/myicon.woff2") format("woff2"),url("/fonts/myicon.woff") format("woff"),url("/fonts/myicon.ttf") format("truetype"),url("/fonts/myicon.svg#myicon") format("svg");
 }
 .myiconfont:before{
 	display:inline-block;
