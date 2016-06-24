@@ -47,7 +47,7 @@
     },
 
     "ftl": {
-      "src": "data",
+      "src": "pagedata",
       "viewRoot": "template",
       "dest": "www",
       "extensions": ["json"]

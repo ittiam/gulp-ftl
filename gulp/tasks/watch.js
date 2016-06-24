@@ -4,18 +4,18 @@ const path   = require('path');
 const watch  = require('gulp-watch');
 
 const watchTask = function() {
-  const watchableTasks = ['fonts', 'images', 'css'];
+  // const watchableTasks = ['fonts', 'js', 'images', 'css'];
 
-  watchableTasks.forEach(function(taskName) {
-    const task = config.tasks[taskName];
-    if (task) {
-      const extensions = task.extensions ? '.{' + task.extensions.join(',') + '}' : '';
-      const glob = path.join(config.root.src, task.src, '**/*' + extensions);
-      watch(glob, function() {
-       require('./' + taskName)();
-      });
-    }
-  });
+  // watchableTasks.forEach(function(taskName) {
+  //   const task = config.tasks[taskName];
+  //   if (task) {
+  //     const extensions = task.extensions ? '.{' + task.extensions.join(',') + '}' : '';
+  //     const glob = path.join(config.root.src, task.src, '**/*' + extensions);
+  //     watch(glob, function() {
+  //      require('./' + taskName)();
+  //     });
+  //   }
+  // });
 
   gulp.watch([
     path.join(process.cwd(), config.tasks.ftl.src, '**/*'),

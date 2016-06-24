@@ -1,3 +1,5 @@
+'use strict';
+
 const compress = require('compression');
 const config = require('../config');
 const express = require('express');
@@ -27,18 +29,23 @@ const serverTask = function(cb) {
   const url = 'http://localhost:' + settings.port + '/' + config.tasks.ftl.dest;
 
   const tasks = getEnabledTasks('dev');
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb);
+  gulpSequence('clean', 'ftl', cb);
 
-  express()
+  const app = express()
     .use(compress())
     .use(logger(settings.logLevel))
-    .use('/', express.static(settings.root, settings.staticOptions))
+    .use(express.static(settings.root, settings.staticOptions))
     .use(require('yog-devtools')({
       view_path: '',    // 避免报错。
       rewrite_file: [path.join(projectRoot, config.root.mock, 'server.conf')],
       data_path: [path.join(projectRoot, config.root.mock)]
     }))
-    .listen(settings.port);
+
+  if (!global.production) {
+    app.use(express.static(config.root.src, settings.staticOptions))
+  }
+
+  app.listen(settings.port);
 
   gutil.log('production server started on ' + gutil.colors.green(url));
   open(url);
