@@ -1,5 +1,5 @@
-const config       = require('../config');
-const gulp         = require('gulp');
+const config = require('../config');
+const gulp = require('gulp');
 const gulpSequence = require('gulp-sequence');
 const getEnabledTasks = require('../lib/getEnabledTasks');
 

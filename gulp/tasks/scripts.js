@@ -1,8 +1,8 @@
-const config  = require('../config');
+const config = require('../config');
 const changed = require('gulp-changed');
-const gulp    = require('gulp');
-const path    = require('path');
-const browserSync  = require('browser-sync');
+const gulp = require('gulp');
+const path = require('path');
+const browserSync = require('browser-sync');
 
 const paths = {
   src: path.join(config.root.src, config.tasks.scripts.src, '/**/*.{' + config.tasks.scripts.extensions + '}'),

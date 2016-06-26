@@ -4,11 +4,12 @@ if (!config.tasks.css) return;
 const path = require('path');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
-const sourcemaps   = require('gulp-sourcemaps')
+const changed = require('gulp-changed');
+const sourcemaps = require('gulp-sourcemaps')
 const handleErrors = require('../lib/handleErrors')
 const autoprefixer = require('gulp-autoprefixer')
 const minifyCSS = require('gulp-cssnano');
-const browserSync  = require('browser-sync');
+const browserSync = require('browser-sync');
 
 const cssTask = function () {
   const dest = global.production ? config.root.dest : config.root.tmp;
@@ -19,6 +20,7 @@ const cssTask = function () {
   };
 
   return gulp.src(paths.src)
+    .pipe(changed(paths.dest))
     .pipe(gulpif(!global.production, sourcemaps.init()))
     // .pipe(sass(config.tasks.css.sass))
     // .on('error', handleErrors)

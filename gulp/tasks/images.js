@@ -1,11 +1,11 @@
-const changed    = require('gulp-changed');
-const gulp       = require('gulp');
+const changed = require('gulp-changed');
+const gulp = require('gulp');
 const gulpif = require('gulp-if');
-const imagemin   = require('gulp-imagemin');
-const config     = require('../config');
+const imagemin = require('gulp-imagemin');
+const config = require('../config');
 const path = require('path');
-const size    = require('gulp-filesize');
-const browserSync  = require('browser-sync');
+const size = require('gulp-filesize');
+const browserSync = require('browser-sync');
 
 const imagesTask = function () {
   const dest = global.production ? config.root.dest : config.root.tmp;

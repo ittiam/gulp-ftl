@@ -1,7 +1,7 @@
-const config  = require('../config');
+const config = require('../config');
 const changed = require('gulp-changed');
-const gulp    = require('gulp');
-const path    = require('path');
+const gulp = require('gulp');
+const path = require('path');
 
 const paths = {
   src: [

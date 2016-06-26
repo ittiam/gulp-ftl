@@ -1,7 +1,7 @@
 const config = require('../config');
-const gulp   = require('gulp');
-const path   = require('path');
-const watch  = require('gulp-watch');
+const gulp = require('gulp');
+const path = require('path');
+const watch = require('gulp-watch');
 
 const watchTask = function() {
   const watchableTasks = ['fonts', 'scripts', 'images', 'css'];

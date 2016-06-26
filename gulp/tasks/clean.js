@@ -1,14 +1,14 @@
-var gulp   = require('gulp');
-var del    = require('del');
-var config = require('../config');
+const gulp = require('gulp');
+const del = require('del');
+const config = require('../config');
 
-var cleanTask = function (cb) {
+const cleanTask = function (cb) {
   del([config.root.tmp]).then(function (paths) {
     cb();
   });
 };
 
-var cleanDestTask = function (cb) {
+const cleanDestTask = function (cb) {
   del([config.root.dest]).then(function (paths) {
     cb();
   });

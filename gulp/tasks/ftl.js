@@ -3,7 +3,8 @@ if (!config.tasks.ftl) return;
 
 const path = require('path');
 const gulp = require('gulp');
-const browserSync  = require('browser-sync');
+const changed = require('gulp-changed');
+const browserSync = require('browser-sync');
 const freemarker = require('gulp-freemarker');
 
 var ftlTask = function () {
@@ -16,6 +17,7 @@ var ftlTask = function () {
   };
 
   return gulp.src(paths.src)
+    .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(freemarker({
       viewRoot: paths.viewRoot,
       options: {}

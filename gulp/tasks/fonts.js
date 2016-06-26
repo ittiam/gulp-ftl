@@ -1,9 +1,9 @@
-const config      = require('../config')
-if(!config.tasks.fonts) return
+const config = require('../config')
+if (!config.tasks.fonts) return
 
-const changed     = require('gulp-changed')
-const gulp        = require('gulp')
-const path        = require('path')
+const changed = require('gulp-changed')
+const gulp = require('gulp')
+const path = require('path')
 
 const fontsTask = function() {
   const dest = global.production ? config.root.dest : config.root.tmp;
