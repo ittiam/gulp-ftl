@@ -25,7 +25,7 @@ const serverTask = function(cb) {
   };
 
   const tasks = getEnabledTasks('dev');
-  gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb);
+  gulpSequence(tasks.assetTasks, tasks.codeTasks, cb);
 
   const app = express()
     .use(compress())
