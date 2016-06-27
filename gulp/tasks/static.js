@@ -11,7 +11,7 @@ const paths = {
   dest: path.join(config.root.dest, config.tasks.static.dest)
 };
 
-const staticTask = function() {
+const staticTask = function () {
   return gulp.src(paths.src)
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulp.dest(paths.dest));

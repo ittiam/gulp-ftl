@@ -3,16 +3,16 @@ const gulp = require('gulp');
 const path = require('path');
 const watch = require('gulp-watch');
 
-const watchTask = function() {
+const watchTask = function () {
   const watchableTasks = ['fonts', 'scripts', 'images', 'css'];
 
-  watchableTasks.forEach(function(taskName) {
+  watchableTasks.forEach(function (taskName) {
     const task = config.tasks[taskName];
     if (task) {
       const extensions = task.extensions ? '.{' + task.extensions.join(',') + '}' : '';
       const glob = path.join(config.root.src, task.src, '**/*' + extensions);
 
-      watch(glob, function() {
+      watch(glob, function () {
         require('./' + taskName)();
       });
     }

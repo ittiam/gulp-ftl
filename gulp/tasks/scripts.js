@@ -9,7 +9,7 @@ const paths = {
   dest: path.join(config.root.tmp, config.tasks.scripts.dest)
 };
 
-const scriptTask = function() {
+const scriptTask = function scriptTask() {
   return gulp.src(paths.src)
     .pipe(changed(paths.dest)) // Ignore unchanged files
     .pipe(gulp.dest(paths.dest))

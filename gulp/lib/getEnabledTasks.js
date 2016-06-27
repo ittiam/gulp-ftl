@@ -1,12 +1,11 @@
-const config  = require('../config');
+const config = require('../config');
 const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
 const assetTasks = ['fonts', 'images'];
 const codeTasks = ['ftl', 'css', 'scripts'];
 
-module.exports = function(env) {
-
+module.exports = function (env) {
   function matchFilter(task) {
     if (config.tasks[task]) {
       if (task === 'ftl' && env === 'production') {
