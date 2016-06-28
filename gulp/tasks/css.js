@@ -5,9 +5,8 @@ const path = require('path');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
-const sourcemaps = require('gulp-sourcemaps')
-const handleErrors = require('../lib/handleErrors')
-const autoprefixer = require('gulp-autoprefixer')
+const handleErrors = require('../lib/handleErrors');
+const autoprefixer = require('gulp-autoprefixer');
 const minifyCSS = require('gulp-cssnano');
 const browserSync = require('browser-sync');
 
@@ -21,12 +20,8 @@ const cssTask = function () {
 
   return gulp.src(paths.src)
     .pipe(changed(paths.dest))
-    .pipe(gulpif(!global.production, sourcemaps.init()))
-    // .pipe(sass(config.tasks.css.sass))
-    // .on('error', handleErrors)
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
     .pipe(gulpif(global.production, minifyCSS({autoprefixer: false})))
-    .pipe(gulpif(!global.production, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }

@@ -3,7 +3,7 @@ const compact = require('lodash/compact');
 
 // Grouped by what can run in parallel
 const assetTasks = ['fonts', 'images'];
-const codeTasks = ['ftl', 'css', 'scripts'];
+const codeTasks = ['ftl', 'css', 'sass', 'scripts'];
 
 module.exports = function (env) {
   function matchFilter(task) {

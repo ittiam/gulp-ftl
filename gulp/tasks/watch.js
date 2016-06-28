@@ -4,7 +4,7 @@ const path = require('path');
 const watch = require('gulp-watch');
 
 const watchTask = function () {
-  const watchableTasks = ['fonts', 'scripts', 'images', 'css'];
+  const watchableTasks = ['fonts', 'scripts', 'images', 'css', 'sass'];
 
   watchableTasks.forEach(function (taskName) {
     const task = config.tasks[taskName];

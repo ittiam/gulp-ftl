@@ -11,6 +11,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
     <title>Gulp Mock Server</title>
+    <link rel="stylesheet" type="text/css" href="/css/test.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="stylesheet" type="text/css" href="/css/iconfont.css">
 </head>
