@@ -37,6 +37,7 @@ const serverTask = function (cb) {
   bs.init({
     port: config.tasks.server.port || 3000,
     server: settings.root,
+    startPath: config.tasks.ftl.dest,
     middleware: [app]
   });
 
